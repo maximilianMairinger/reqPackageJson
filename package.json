@@ -1,0 +1,60 @@
+{
+  "name": "req-package-json",
+  "version": "0.0.1",
+  "description": "Load and parse nearset package.json.",
+  "main": "./app/dist/esm/reqPackageJson.js",
+  "types": "./app/dist/esm/reqPackageJson.d.ts",
+  "bin": "./app/dist/esm/cli/reqPackageJson-cli.js",
+  "exports": {
+    "node": {
+      "import": "./app/dist/esm/reqPackageJson.js",
+      "require": "./app/dist/cjs/reqPackageJson.js"
+    },
+    "default": "./app/dist/esm/reqPackageJson.js"
+  },
+  "scripts": {
+    "build": "npm run buildCJS && npm run buildESM",
+    "buildCJS": "tsc -p ./tsconfig.prod.cjs.json",
+    "buildESM": "tsc -p ./tsconfig.prod.esm.json",
+    "dev": "npm run devWeb",
+    "devWeb": "rollup --config rollup.web.dev.config.js -w",
+    "devNode": "rollup --config rollup.node.dev.config.js -w",
+    "deploy": "npm run build && npm publish",
+    "repl": "node ./repl/dist/reqPackageJson-repl.js",
+    "start": "npm run repl",
+    "buildTest": "rollup --config rollup.node.test.config.js",
+    "test": "npm run buildTest && jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximilianMairinger/reqPackageJson.git"
+  },
+  "keywords": [
+  "request",
+  "package.json",
+  "load",
+  "package",
+  "json",
+  "config"
+],
+  "author": "Maximilian Mairinger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maximilianMairinger/reqPackageJson/issues"
+  },
+  "homepage": "https://github.com/maximilianMairinger/reqPackageJson#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^13.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^8.1.0",
+    "@rollup/plugin-typescript": "^5.0.0",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^13.13.4",
+    "commander": "^6.2.1",
+    "jest": "^26.6.3",
+    "rollup": "^2.18.1",
+    "tslib": "2.0.0",
+    "typescript": "^4.0.2",
+    "webpack-merge": "^5.0.9"
+  }
+}
