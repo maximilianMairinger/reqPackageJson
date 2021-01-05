@@ -13,7 +13,7 @@ function tryParse(file: string) {
   }
 }
 
-export default function packageJsonConfig(dirname: string) {
+export function reqPachaeJson(dirname: string) {
   let attempt = dirname
   while (!fs.existsSync(path.join(attempt, "package.json")) || !tryParse(path.join(attempt, "package.json"))) {
     attempt = path.join(attempt, "..")
@@ -21,3 +21,6 @@ export default function packageJsonConfig(dirname: string) {
 
   return parsed
 }
+
+
+export default reqPachaeJson(path.resolve(__dirname, "../../../../../"))
