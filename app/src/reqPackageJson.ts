@@ -1,5 +1,6 @@
 import * as fs from "fs"
 import * as path from "path"
+import { callerDirname } from 'caller-dirname';
 
 
 let parsed: any
@@ -23,4 +24,4 @@ export function reqPachaeJson(dirname: string) {
 }
 
 
-export default reqPachaeJson(path.resolve(__dirname, "../../../../../"))
+export default reqPachaeJson(path.resolve(callerDirname()))
