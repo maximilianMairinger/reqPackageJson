@@ -1,8 +1,6 @@
-# Req package json
+# Require package.json
 
-Load and parse nearset package.json.
-
-> Please note that Req package json is currently under development and not yet suited for production
+Load and parse nearest package.json, relative to the callers directory.
 
 ## Installation
 
@@ -13,11 +11,18 @@ Load and parse nearset package.json.
 ## Usage
 
 
+```ts
+import config from "req-package-json"
+
+console.log(config) // {name: "whatever", version: "1.0.0"}
+```
+
+### Advanced
 
 ```ts
-import reqPackageJson from "req-package-json"
+import { reqPackageJson } from "req-package-json"
 
-reqPackageJson()
+reqPackageJson("dir/where/to/start/searching")
 ```
 
 ## Contribute
