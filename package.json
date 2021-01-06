@@ -57,6 +57,6 @@
     "webpack-merge": "^5.0.9"
   },
   "dependencies": {
-    "caller-dirname": "^2.0.0"
+    "caller-path": "^3.0.0"
   }
 }
