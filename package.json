@@ -1,6 +1,6 @@
 {
   "name": "req-package-json",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Load and parse nearset package.json.",
   "main": "./app/dist/esm/reqPackageJson.js",
   "types": "./app/dist/esm/reqPackageJson.d.ts",
