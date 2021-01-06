@@ -12,9 +12,9 @@ Load and parse nearest package.json, relative to the callers directory.
 
 
 ```ts
-import config from "req-package-json"
+import reqPackageJson from "req-package-json"
 
-console.log(config) // {name: "whatever", version: "1.0.0"}
+console.log(reqPackageJson()) // {name: "whatever", version: "1.0.0"}
 ```
 
 ### Advanced
@@ -22,7 +22,8 @@ console.log(config) // {name: "whatever", version: "1.0.0"}
 ```ts
 import { reqPackageJson } from "req-package-json"
 
-reqPackageJson("dir/where/to/start/searching")
+reqPackageJson() // relative to current dir (where the function is called)
+reqPackageJson("dir/where/to/start/searching") // relative to given dir
 ```
 
 ## Contribute

@@ -14,7 +14,7 @@ function tryParse(file: string) {
   }
 }
 
-export function reqPackageJson(dirname: string) {
+export function reqPackageJson(dirname: string = callerDirname()) {
   let attempt = dirname
   while (!fs.existsSync(path.join(attempt, "package.json")) || !tryParse(path.join(attempt, "package.json"))) {
     attempt = path.join(attempt, "..")
@@ -24,4 +24,4 @@ export function reqPackageJson(dirname: string) {
 }
 
 
-export default reqPackageJson(path.resolve(callerDirname()))
+export default reqPackageJson
