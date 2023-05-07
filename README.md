@@ -1,6 +1,6 @@
 # Require package.json
 
-Load and parse nearest package.json, relative to the callers directory.
+Load and parse the nearest package.json, relative to the callers directory.
 
 ## Installation
 
