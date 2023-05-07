@@ -4,15 +4,21 @@ import * as path from "path"
 
 const regex = /(?<=\().*\.(js|mjs)(?=((\:[0-9][0-9]*)(\:[0-9][0-9]*))\))/gm;
 function getFileNamesOfStacktrace(str: string) {
-  return str.match(regex).reverse()
+  const ar = [] as string[]
+  str.match(regex)?.forEach((matchStr) => {
+    ar.push(matchStr)
+  })
+  return ar
 }
 
-function getCallerFilenames() {
+export function getCallerFilenames() {
   try {
     throw new Error()
   }
   catch(e) {
-    return getFileNamesOfStacktrace(e.stack)
+    const fileNames = getFileNamesOfStacktrace(e.stack)
+    fileNames.shift()
+    return fileNames
   }
 }
 
