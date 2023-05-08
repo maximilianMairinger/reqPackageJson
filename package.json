@@ -1,6 +1,6 @@
 {
   "name": "req-package-json",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "Load and parse nearest package.json.",
   "main": "./app/dist/esm/reqPackageJson.mjs",
   "types": "./app/dist/esm/reqPackageJson.d.ts",
